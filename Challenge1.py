@@ -1,6 +1,7 @@
 import logging
 import threading
 import time
+# TODO: Threading and OpenCL
 password = input("ENTER ZEH PASSWORD: ")
 print("Muhchines arr fihring, Mahster")
 
