@@ -1,8 +1,21 @@
 def main():
+    # n = amount of characters in a word
     n = setVar("n","above 0")
+    # m = amount of characters per character slot
     m = setVar("m","above or equal to 2 and below or equal to 26")
+    everyCombo(n,m)
 
-    
+def everyCombo(n,m):
+    characters = [[0][0]] * 26
+    for index in range(0,26):
+        print(index)
+        characters[index] = [[chr(index+65)][0]]
+
+    print(characters)
+    allWords = open("{}.txt".format(n),"r")
+
+
+
 def setVar(name,requirements):
     var = None
     try:
