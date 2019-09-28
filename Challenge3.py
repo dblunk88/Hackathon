@@ -6,15 +6,25 @@ def main():
     everyCombo(n,m)
 
 def everyCombo(n,m):
-    characters = [[0][0]] * 26
-    for index in range(0,26):
-        print(index)
-        characters[index] = [[chr(index+65)][0]]
-
-    print(characters)
+    characters = {}
     allWords = open("{}.txt".format(n),"r")
-
-
+    wordCount = 0
+    for lines in allWords:
+        print(lines)
+        indexCount = 0
+        for chars in lines.strip(" ").strip("\n"):
+            dicValue = str(indexCount)+chars
+            if dicValue in characters:
+                characters[dicValue] += 1
+            else:
+                characters[dicValue] = 0
+            indexCount += 1
+        wordCount += 1
+    print(characters)
+    for index in range(0,n):
+        for charNum in range(0,26):
+            actualChar = chr(charNum + 65)
+            print(characters[str(index) + actualChar])
 
 def setVar(name,requirements):
     var = None
