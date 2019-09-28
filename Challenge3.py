@@ -1,4 +1,3 @@
-
 def main():
     # n = amount of characters in a word
     n = setVar("n","above 0")
@@ -26,10 +25,16 @@ def everyCombo(n,m):
         indexListed = []
         for charNum in range(0,26):
             actualChar = chr(charNum + 65)
-            indexListed.append([characters[str(index) + actualChar],actualChar])
+            try:
+                indexListed.append([characters[str(index) + actualChar],actualChar])
+            except:
+                continue
         for mloop in range(0,m):
-            print(max(indexListed))
-            indexListed.remove(max(indexListed))
+            try:
+                print(max(indexListed))
+                indexListed.remove(max(indexListed))
+            except:
+                continue
 
 def setVar(name,requirements):
     var = None
