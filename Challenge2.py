@@ -9,16 +9,18 @@ M1 = [["B", "D", "G", "H", "L", "M", "P", "R", "S", "T"], ["A", "E", "H", "I", "
     , ["A", "D", "E", "K", "L", "N", "S", "T", "Y", ""]]
 count = 0
 
-for x in numpy.array(numpy.meshgrid(*M1)).T.reshape(-1,len(M1)):
-    # print(x)
-    if x[3] != "":
-        count += 1.5
-    else:
-        count += 1
+write = open("possible_outcomes.txt","w+")
 
-    if ''.join(x) == password:
-        print(count)
-        exit(0)
+for x in numpy.array(numpy.meshgrid(*M1)).T.reshape(-1,len(M1)):
+    write.write(''.join(x) + "\n")
+    # if x[3] != "":
+    #     count += 1.5
+    # else:
+    #     count += 1
+    #
+    # if ''.join(x) == password:
+    #     print(count)
+    #     exit(0)
 
 # for new in itertools.product(*M1):
 #     print(new)
