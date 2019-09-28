@@ -16,7 +16,7 @@ def everyCombo(n,m):
             if dicValue in characters:
                 characters[dicValue] += 1
             else:
-                characters[dicValue] = 0
+                characters[dicValue] = 1
             indexCount += 1
         wordCount += 1
     print(characters)
