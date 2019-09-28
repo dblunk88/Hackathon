@@ -1,3 +1,4 @@
+
 def main():
     # n = amount of characters in a word
     n = setVar("n","above 0")
@@ -10,7 +11,6 @@ def everyCombo(n,m):
     allWords = open("{}.txt".format(n),"r")
     wordCount = 0
     for lines in allWords:
-        print(lines)
         indexCount = 0
         for chars in lines.strip(" ").strip("\n"):
             dicValue = str(indexCount)+chars
@@ -22,9 +22,14 @@ def everyCombo(n,m):
         wordCount += 1
     print(characters)
     for index in range(0,n):
+        print("Index",index)
+        indexListed = []
         for charNum in range(0,26):
             actualChar = chr(charNum + 65)
-            print(characters[str(index) + actualChar])
+            indexListed.append([characters[str(index) + actualChar],actualChar])
+        for mloop in range(0,m):
+            print(max(indexListed))
+            indexListed.remove(max(indexListed))
 
 def setVar(name,requirements):
     var = None
