@@ -3,7 +3,7 @@ import numpy
 
 
 def randomSearch(arr, key):
-    count = 0
+    count = 0.0
 
     for x in numpy.array(numpy.meshgrid(*arr)).T.reshape(-1, len(arr)):
         combination = ''.join(x)
@@ -20,11 +20,13 @@ def randomSearch(arr, key):
                         continue
 
                     else:
-                        count += 1
+                        count += 1.0
                         read.close()
                         continue
             else:
                 continue
+
+    return 0.0
 
         # Create file of possible outcomes
         # write.write(''.join(x) + "\n")

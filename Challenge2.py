@@ -9,7 +9,7 @@ read = open("challenge2testinputs.txt", "r")
 
 for word in read.read().split("\n"):
     print("testing: " + word + "...")
-    count += PassCrack.randomSearch(M1, "BURY")
+    count += PassCrack.randomSearch(M1, word)
 
 read.close()
 print("Average time to crack: " + str((count/50)/60) + " minutes.")
